@@ -1,0 +1,65 @@
+{
+  "usuarios": [
+    {
+      "id": "u-001",
+      "nombre": "Carlos López",
+      "email": "carlos@mail.com",
+      "password": "hash123",
+      "rol": "cliente",
+      "createdAt": "2026-06-01T10:00:00Z"
+    }
+  ],
+
+  "vehiculos": [
+    {
+      "id": "v-001",
+      "usuarioId": "u-001",
+      "marca": "Toyota",
+      "modelo": "Corolla",
+      "anio": 2020,
+      "placa": "ABC-123",
+      "color": "Blanco",
+      "kilometraje": 45000
+    }
+  ],
+
+  "servicios": [
+    {
+      "id": "s-001",
+      "nombre": "Cambio de aceite",
+      "descripcion": "Cambio de aceite y filtro",
+      "precio": 3500,
+      "duracionMinutos": 30
+    },
+    {
+      "id": "s-002",
+      "nombre": "Revisión de frenos",
+      "descripcion": "Inspección y ajuste de frenos",
+      "precio": 5000,
+      "duracionMinutos": 60
+    }
+  ],
+
+  "citas": [
+    {
+      "id": "c-001",
+      "usuarioId": "u-001",
+      "vehiculoId": "v-001",
+      "servicioId": "s-001",
+      "fecha": "2026-06-10T09:00:00Z",
+      "estado": "completada",
+      "notas": "Cliente pidió aceite sintético"
+    }
+  ],
+
+  "historialCitas": [
+    {
+      "id": "h-001",
+      "usuarioId": "u-001",
+      "vehiculoId": "v-001",
+      "citaId": "c-001",
+      "resultado": "Servicio completado sin inconvenientes",
+      "fecha": "2026-06-10T10:00:00Z"
+    }
+  ]
+}
