@@ -4,6 +4,7 @@
       "id": "u-001",
       "nombre": "Carlos López",
       "email": "carlos@mail.com",
+      "telefono": "1234-1234",
       "password": "hash123",
       "rol": "cliente",
       "createdAt": "2026-06-01T10:00:00Z"

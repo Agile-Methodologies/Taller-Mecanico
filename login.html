@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sistema de acceso — Taller Mecánico" />
+  <title>Taller Mecánico — Iniciar sesión</title>
+  <link rel="stylesheet" href="CSS/style.css" />
+</head>
+<body>
+
+  <div class="contenedor-login">
+
+    <!-- Panel izquierdo: identidad de marca -->
+    <aside class="panel-marca">
+      <div class="logo-contenedor">
+        <img
+          src="IMG/logo.png"
+          alt="Logo Taller Mecánico"
+          onerror="this.style.display='none'; document.querySelector('.logo-texto').style.display='block';"
+        />
+      </div>
+
+      <div class="logo-texto" style="display:none;">TM</div>
+
+      <div>
+        <div class="logo-subtitulo">Taller Mecánico</div>
+        <div class="divisor-marca" style="margin:0.8rem auto;"></div>
+        <p class="eslogan">"Precisión y confianza en cada servicio"</p>
+      </div>
+    </aside>
+
+    <!-- Formulario de acceso -->
+    <main class="panel-formulario">
+      <div class="tarjeta-login" role="main">
+
+        <div class="encabezado-form">
+          <h1>Bienvenido</h1>
+          <p>Ingresa tus credenciales para acceder al sistema</p>
+        </div>
+
+        <!-- Formulario de login -->
+        <form id="formulario-login" novalidate>
+
+          <!-- Correo electrónico -->
+          <div class="grupo-campo">
+            <label for="correo">Correo electrónico</label>
+            <div class="envoltorio-input">
+              <span class="icono-campo" aria-hidden="true">✉</span>
+              <input
+                type="email"
+                id="correo"
+                name="correo"
+                placeholder="usuario@taller.com"
+                autocomplete="username"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Contraseña -->
+          <div class="grupo-campo">
+            <label for="password">Contraseña</label>
+            <div class="envoltorio-input">
+              <span class="icono-campo" aria-hidden="true">🔒</span>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="••••••••"
+                autocomplete="current-password"
+                required
+              />
+              <button
+                type="button"
+                id="toggle-password"
+                aria-label="Mostrar u ocultar contraseña"
+                title="Mostrar contraseña"
+              >👁</button>
+            </div>
+          </div>
+
+          <button type="submit" id="btn-login" class="btn-principal">
+            Iniciar sesión
+          </button>
+
+          <div id="mensaje" class="mensaje" role="alert" aria-live="polite"></div>
+
+          <p class="enlace-ayuda">
+              <a href="registro.html">
+                Registrarme
+              </a>
+          </p>
+
+          <p class="enlace-ayuda">
+            <a href="recuperar.html">
+              ¿Olvidaste tu contraseña?
+            </a>
+          </p>
+
+        </form>
+
+        <div class="pie-login">
+          Sistema exclusivo para personal autorizado<br>
+          &copy; <span id="anio"></span> Taller Mecánico
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <script src="/JS/db.js"></script>
+  <script src="/JS/login.js"></script>
+  <script>
+    document.getElementById("anio").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
