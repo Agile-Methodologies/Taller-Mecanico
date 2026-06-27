@@ -354,3 +354,58 @@ body::before {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; animation: none !important; }
 }
+
+.fila-campos {
+  display : flex;
+  gap     : 0.9rem;
+}
+
+.fila-campos .grupo-campo {
+  flex : 1;
+  min-width: 0; 
+}
+
+
+.requisitos-password {
+  list-style : none;
+  margin     : 0.6rem 0 0;
+  padding    : 0;
+  font-size  : 0.78rem;
+  color      : var(--azul-medio);
+  display    : grid;
+  grid-template-columns: 1fr 1fr;
+  gap        : 0.3rem 0.6rem;
+}
+
+.requisitos-password li {
+  display     : flex;
+  align-items : center;
+  gap         : 0.35rem;
+  transition  : color var(--transicion);
+}
+
+.requisitos-password li::before {
+  content     : "○";
+  font-size   : 0.7rem;
+  color       : #b5a98a;
+}
+
+.requisitos-password li.cumplido {
+  color : var(--azul-marino);
+}
+
+.requisitos-password li.cumplido::before {
+  content : "✓";
+  color   : var(--rojo-vivo);
+}
+
+.tarjeta-registro {
+  max-width : 420px;
+}
+
+@media (max-width: 680px) {
+  .fila-campos {
+    flex-direction: column;
+    gap: 0;
+  }
+}

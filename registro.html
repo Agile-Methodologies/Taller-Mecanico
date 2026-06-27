@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Crear cuenta — Taller Mecánico" />
+  <title>Taller Mecánico — Crear cuenta</title>
+  <link rel="stylesheet" href="CSS/style.css" />
+</head>
+<body>
+
+  <div class="contenedor-login">
+
+    <!-- Panel izquierdo: identidad de marca (igual que login.html) -->
+    <aside class="panel-marca">
+      <div class="logo-contenedor">
+        <img
+          src="IMG/logo.png"
+          alt="Logo Taller Mecánico"
+          onerror="this.style.display='none'; document.querySelector('.logo-texto').style.display='block';"
+        />
+      </div>
+
+      <div class="logo-texto" style="display:none;">TM</div>
+
+      <div>
+        <div class="logo-subtitulo">Taller Mecánico</div>
+        <div class="divisor-marca" style="margin:0.8rem auto;"></div>
+        <p class="eslogan">"Precisión y confianza en cada servicio"</p>
+      </div>
+    </aside>
+
+    <!-- Formulario de registro -->
+    <main class="panel-formulario">
+      <div class="tarjeta-login tarjeta-registro" role="main">
+
+        <div class="encabezado-form">
+          <h1>Crear cuenta</h1>
+          <p>Regístrate para reservar citas y dar seguimiento a tu vehículo</p>
+        </div>
+
+        <!-- Formulario de registro -->
+        <form id="formulario-registro" novalidate>
+
+          <!-- Nombre + Teléfono en la misma fila -->
+          <div class="fila-campos">
+            <div class="grupo-campo">
+              <label for="nombre">Nombre completo</label>
+              <div class="envoltorio-input">
+                <span class="icono-campo" aria-hidden="true">🧑</span>
+                <input
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  placeholder="Ej: Juan Pérez"
+                  autocomplete="name"
+                  required
+                  minlength="3"
+                />
+              </div>
+            </div>
+
+            <div class="grupo-campo">
+              <label for="telefono">Teléfono</label>
+              <div class="envoltorio-input">
+                <span class="icono-campo" aria-hidden="true">📞</span>
+                <input
+                  type="tel"
+                  id="telefono"
+                  name="telefono"
+                  placeholder="8888-1234"
+                  autocomplete="tel"
+                  required
+                  pattern="[0-9\-\s]{8,}"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- Correo electrónico -->
+          <div class="grupo-campo">
+            <label for="email">Correo electrónico</label>
+            <div class="envoltorio-input">
+              <span class="icono-campo" aria-hidden="true">✉</span>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="usuario@taller.com"
+                autocomplete="email"
+                required
+              />
+            </div>
+          </div>
+
+          <!-- Contraseña -->
+          <div class="grupo-campo">
+            <label for="password">Contraseña</label>
+            <div class="envoltorio-input">
+              <span class="icono-campo" aria-hidden="true">🔒</span>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="••••••••"
+                autocomplete="new-password"
+                required
+                minlength="8"
+              />
+              <button
+                type="button"
+                id="toggle-password"
+                aria-label="Mostrar u ocultar contraseña"
+                title="Mostrar contraseña"
+              >👁</button>
+            </div>
+            <ul class="requisitos-password" id="requisitos-password">
+              <li id="req-longitud">Mínimo 8 caracteres</li>
+              <li id="req-numero">Al menos un número</li>
+            </ul>
+          </div>
+
+          <!-- Confirmar contraseña -->
+          <div class="grupo-campo">
+            <label for="confirmar-password">Confirmar contraseña</label>
+            <div class="envoltorio-input">
+              <span class="icono-campo" aria-hidden="true">🔒</span>
+              <input
+                type="password"
+                id="confirmar-password"
+                name="confirmar-password"
+                placeholder="••••••••"
+                autocomplete="new-password"
+                required
+              />
+              <button
+                type="button"
+                id="toggle-confirmar-password"
+                aria-label="Mostrar u ocultar contraseña"
+                title="Mostrar contraseña"
+              >👁</button>
+            </div>
+          </div>
+
+          <button type="submit" id="btn-registro" class="btn-principal">
+            Registrarme
+          </button>
+
+          <div id="mensaje" class="mensaje" role="alert" aria-live="polite"></div>
+
+          <p class="enlace-ayuda">
+            ¿Ya tienes cuenta?
+            <a href="index.html">Inicia sesión</a>
+          </p>
+
+        </form>
+
+        <div class="pie-login">
+          Sistema exclusivo para personal autorizado<br>
+          &copy; <span id="anio"></span> Taller Mecánico
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <script src="JS/db.js"></script>
+  <script src="JS/registro.js"></script>
+  <script>
+    document.getElementById("anio").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
