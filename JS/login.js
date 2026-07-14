@@ -95,7 +95,14 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
 
       // ✔ Acceso correcto
-      mostrarMensaje(mensajeEl, `Bienvenido, ${usuario.nombre} ✓`, "exito");
+      guardarSesion(usuario);
+
+      mostrarMensaje(
+          mensajeEl,
+          `Bienvenido, ${usuario.nombre} ✓`,
+          "exito"
+      );
+
       btnLogin.disabled = true;
 
       setTimeout(() => {
@@ -103,11 +110,17 @@ document.addEventListener("DOMContentLoaded", async () => {
       }, 500);
 
       setTimeout(() => {
-        alert(`Acceso concedido.\nBienvenido: ${usuario.nombre}`);
-        btnLogin.disabled = false;
-        mostrarMensaje(mensajeEl, "", "");
-        document.querySelector(".tarjeta-login").classList.remove("exito-animacion");
-        // window.location.href = "dashboard.html";
+
+          btnLogin.disabled = false;
+
+          mostrarMensaje(mensajeEl, "", "");
+
+          document
+              .querySelector(".tarjeta-login")
+              .classList.remove("exito-animacion");
+
+          window.location.href = "index.html";
+
       }, 2500);
 
     } catch (error) {

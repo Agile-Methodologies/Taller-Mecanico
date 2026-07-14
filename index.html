@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Taller Mecánico | Inicio</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="CSS/index.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ========================= -->
+    <!-- HEADER -->
+    <!-- ========================= -->
+
+    <header class="header">
+
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+
+                <span>Taller Mecánico</span>
+
+            </a>
+
+            <ul class="nav-links">
+
+                <li><a href="#inicio">Inicio</a></li>
+
+                <li><a href="#servicios">Servicios</a></li>
+
+                <li><a href="#nosotros">Nosotros</a></li>
+
+                <li><a href="#reservar">Reservar cita</a></li>
+
+                <li><a href="#contacto">Contacto</a></li>
+
+            </ul>
+
+            <!-- Usuario NO autenticado -->
+
+            <div class="login-container">
+
+                <a href="login.html" class="btn-login">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Iniciar sesión
+
+                </a>
+
+            </div>
+
+            <!-- Usuario autenticado (oculto por JS) -->
+
+            <div class="perfil-container oculto">
+
+                <button class="perfil-btn">
+
+                    <i class="fa-solid fa-circle-user"></i>
+
+                    <span id="nombre-usuario">Usuario</span>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+                <div class="dropdown">
+
+                    <a href="perfil.html">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        Mi perfil
+
+                    </a>
+
+                    <a href="mis-vehiculos.html">
+
+                        <i class="fa-solid fa-car"></i>
+
+                        Mis vehículos
+
+                    </a>
+
+                    <a href="historial.html">
+
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+
+                        Historial de citas
+
+                    </a>
+
+                    <a href="#" id="cerrarSesion">
+
+                        <i class="fa-solid fa-right-from-bracket"></i>
+
+                        Cerrar sesión
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Menú móvil -->
+
+            <button class="menu-btn">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </nav>
+
+    </header>
+
+    <!-- ========================= -->
+    <!-- HERO -->
+    <!-- ========================= -->
+
+    <section class="hero" id="inicio">
+
+        <div class="overlay"></div>
+
+        <div class="hero-contenido">
+
+            <span class="subtitulo">
+
+                Cuidamos tu vehículo como si fuera nuestro
+
+            </span>
+
+            <h1>
+
+                El mejor servicio mecánico para mantener tu automóvil en perfectas condiciones.
+
+            </h1>
+
+            <p>
+
+                Contamos con técnicos especializados, equipos modernos y atención personalizada
+                para ofrecer mantenimiento preventivo y correctivo con la calidad que tu vehículo merece.
+
+            </p>
+
+            <div class="hero-botones">
+
+                <a href="login.html" class="btn-principal">
+
+                    <i class="fa-solid fa-calendar-check"></i>
+
+                    Reservar una cita
+
+                </a>
+
+                <a href="#servicios" class="btn-secundario">
+
+                    Nuestros servicios
+
+                </a>
+
+            </div>
+
+            <div class="hero-info">
+
+                <div>
+
+                    <h2>15+</h2>
+
+                    <span>Años de experiencia</span>
+
+                </div>
+
+                <div>
+
+                    <h2>2500+</h2>
+
+                    <span>Vehículos atendidos</span>
+
+                </div>
+
+                <div>
+
+                    <h2>98%</h2>
+
+                    <span>Clientes satisfechos</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ======================================== -->
+    <!-- SERVICIOS -->
+    <!-- ======================================== -->
+
+    <section class="servicios" id="servicios">
+
+        <div class="titulo-seccion">
+
+            <span>Nuestros servicios</span>
+
+            <h2>Todo lo que tu vehículo necesita</h2>
+
+            <p>
+                Brindamos soluciones mecánicas con personal capacitado y herramientas de última tecnología para garantizar un servicio confiable y de calidad.
+            </p>
+
+        </div>
+
+        <div class="contenedor-servicios">
+
+            <article class="card-servicio">
+
+                <i class="fa-solid fa-oil-can"></i>
+
+                <h3>Cambio de aceite</h3>
+
+                <p>
+                    Sustitución de aceite y filtro para mantener el motor en óptimas condiciones.
+                </p>
+
+            </article>
+
+            <article class="card-servicio">
+
+                <i class="fa-solid fa-car"></i>
+
+                <h3>Revisión de frenos</h3>
+
+                <p>
+                    Inspección completa del sistema de frenos para garantizar tu seguridad.
+                </p>
+
+            </article>
+
+            <article class="card-servicio">
+
+                <i class="fa-solid fa-gears"></i>
+
+                <h3>Afinamiento</h3>
+
+                <p>
+                    Ajuste y mantenimiento del motor para mejorar su rendimiento.
+                </p>
+
+            </article>
+
+            <article class="card-servicio">
+
+                <i class="fa-solid fa-compass-drafting"></i>
+
+                <h3>Alineado y balanceo</h3>
+
+                <p>
+                    Mayor estabilidad, menor desgaste de llantas y conducción más segura.
+                </p>
+
+            </article>
+
+            <article class="card-servicio">
+
+                <i class="fa-solid fa-laptop-medical"></i>
+
+                <h3>Diagnóstico computarizado</h3>
+
+                <p>
+                    Detectamos fallas electrónicas mediante equipos especializados.
+                </p>
+
+            </article>
+
+            <article class="card-servicio">
+
+                <i class="fa-solid fa-bolt"></i>
+
+                <h3>Electricidad automotriz</h3>
+
+                <p>
+                    Reparación y mantenimiento del sistema eléctrico del vehículo.
+                </p>
+
+            </article>
+
+        </div>
+        
+    </section>
+
+    <!-- ======================================== -->
+    <!-- POR QUÉ ELEGIRNOS -->
+    <!-- ======================================== -->
+
+    <section class="beneficios">
+
+        <div class="titulo-seccion">
+
+            <span>¿Por qué elegirnos?</span>
+
+            <h2>Comprometidos con la calidad</h2>
+
+        </div>
+
+        <div class="contenedor-beneficios">
+
+            <div class="beneficio">
+
+                <i class="fa-solid fa-user-check"></i>
+
+                <h3>Técnicos certificados</h3>
+
+            </div>
+
+            <div class="beneficio">
+
+                <i class="fa-solid fa-shield-heart"></i>
+
+                <h3>Garantía en reparaciones</h3>
+
+            </div>
+
+            <div class="beneficio">
+
+                <i class="fa-solid fa-stopwatch"></i>
+
+                <h3>Atención rápida</h3>
+
+            </div>
+
+            <div class="beneficio">
+
+                <i class="fa-solid fa-file-circle-check"></i>
+
+                <h3>Historial digital</h3>
+
+            </div>
+
+            <div class="beneficio">
+
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+
+                <h3>Equipo especializado</h3>
+
+            </div>
+
+            <div class="beneficio">
+
+                <i class="fa-solid fa-handshake"></i>
+
+                <h3>Atención personalizada</h3>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ======================================== -->
+    <!-- CÓMO FUNCIONA -->
+    <!-- ======================================== -->
+
+    <section class="proceso">
+
+        <div class="titulo-seccion">
+
+            <span>Proceso</span>
+
+            <h2>Reserva tu cita en pocos pasos</h2>
+
+        </div>
+
+        <div class="linea-tiempo">
+
+            <div class="paso">
+
+                <div class="numero">1</div>
+
+                <h3>Reserva</h3>
+
+                <p>
+                    Selecciona la fecha y el servicio que necesitas.
+                </p>
+
+            </div>
+
+            <div class="paso">
+
+                <div class="numero">2</div>
+
+                <h3>Confirmación</h3>
+
+                <p>
+                    Nuestro equipo verificará la disponibilidad y confirmará tu cita.
+                </p>
+
+            </div>
+
+            <div class="paso">
+
+                <div class="numero">3</div>
+
+                <h3>Trae tu vehículo</h3>
+
+                <p>
+                    Acude al taller en la fecha y hora programadas.
+                </p>
+
+            </div>
+
+            <div class="paso">
+
+                <div class="numero">4</div>
+
+                <h3>Recibe el servicio</h3>
+
+                <p>
+                    Realizamos el mantenimiento con altos estándares de calidad.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ======================================== -->
+    <!-- RESERVAR -->
+    <!-- ======================================== -->
+
+    <section class="cta" id="reservar">
+
+        <div class="cta-contenido">
+
+            <h2>¿Listo para darle el mejor cuidado a tu vehículo?</h2>
+
+            <p>
+                Agenda tu cita de forma rápida y sencilla desde nuestra plataforma.
+            </p>
+
+            <a href="login.html" class="btn-principal">
+
+                <i class="fa-solid fa-calendar-check"></i>
+
+                Reservar una cita
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- ======================================== -->
+    <!-- NOSOTROS -->
+    <!-- ======================================== -->
+
+    <section class="nosotros" id="nosotros">
+
+        <div class="nosotros-imagen">
+
+            <img src="IMG/taller.jpg" alt="Instalaciones del taller mecánico">
+
+        </div>
+
+        <div class="nosotros-contenido">
+
+            <span>Sobre nosotros</span>
+
+            <h2>Comprometidos con el cuidado de tu vehículo</h2>
+
+            <p>
+                Somos un taller mecánico dedicado a brindar servicios de mantenimiento
+                preventivo y correctivo para vehículos livianos. Nuestro compromiso es
+                ofrecer soluciones confiables, utilizando herramientas modernas y
+                procedimientos que garanticen la seguridad y el buen funcionamiento
+                de cada automóvil.
+            </p>
+
+            <p>
+                Trabajamos con un equipo de profesionales capacitados que priorizan la
+                calidad, la transparencia y la satisfacción de nuestros clientes en
+                cada servicio realizado.
+            </p>
+
+            <div class="nosotros-info">
+
+                <div>
+
+                    <h3>15+</h3>
+
+                    <span>Años de experiencia</span>
+
+                </div>
+
+                <div>
+
+                    <h3>2500+</h3>
+
+                    <span>Vehículos atendidos</span>
+
+                </div>
+
+                <div>
+
+                    <h3>100%</h3>
+
+                    <span>Compromiso</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ======================================== -->
+    <!-- TESTIMONIOS -->
+    <!-- ======================================== -->
+
+    <section class="testimonios">
+
+        <div class="titulo-seccion">
+
+            <span>Opiniones</span>
+
+            <h2>Lo que dicen nuestros clientes</h2>
+
+        </div>
+
+        <div class="contenedor-testimonios">
+
+            <article class="testimonio">
+
+                <div class="estrellas">
+
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+
+                </div>
+
+                <p>
+
+                    "Excelente servicio. La atención fue rápida y el personal explicó
+                    claramente cada reparación realizada. Sin duda regresaré."
+
+                </p>
+
+                <h4>Carlos López</h4>
+
+            </article>
+
+            <article class="testimonio">
+
+                <div class="estrellas">
+
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+
+                </div>
+
+                <p>
+
+                    "Muy profesionales y responsables. El proceso para reservar la cita
+                    fue sencillo y el vehículo quedó en excelentes condiciones."
+
+                </p>
+
+                <h4>María Rodríguez</h4>
+
+            </article>
+
+            <article class="testimonio">
+
+                <div class="estrellas">
+
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+
+                </div>
+
+                <p>
+
+                    "Recomiendo completamente el taller. Excelente atención, rapidez y
+                    un servicio de gran calidad."
+
+                </p>
+
+                <h4>José Ramírez</h4>
+
+            </article>
+
+        </div>
+
+    </section>
+    
+    <!-- ======================================== -->
+    <!-- CONTACTO -->
+    <!-- ======================================== -->
+
+    <section class="contacto" id="contacto">
+
+        <div class="titulo-seccion">
+
+            <span>Contáctanos</span>
+
+            <h2>Estamos para ayudarte</h2>
+
+        </div>
+
+        <div class="contenedor-contacto">
+
+            <div class="info-contacto">
+
+                <div>
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <div>
+
+                        <h3>Ubicación</h3>
+
+                        <p>San Ramón, Alajuela, Costa Rica</p>
+
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    <div>
+
+                        <h3>Teléfono</h3>
+
+                        <p>+506 2456-1234</p>
+
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <div>
+
+                        <h3>Correo</h3>
+
+                        <p>info@tallermecanico.com</p>
+
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <i class="fa-solid fa-clock"></i>
+
+                    <div>
+
+                        <h3>Horario</h3>
+
+                        <p>Lunes a Viernes</p>
+
+                        <p>8:00 a.m. - 6:00 p.m.</p>
+
+                        <p>Sábado: 8:00 a.m. - 2:00 p.m.</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ======================================== -->
+    <!-- FOOTER -->
+    <!-- ======================================== -->
+
+    <footer class="footer">
+
+        <div class="footer-contenido">
+
+            <div class="footer-logo">
+
+                <h2>
+
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+
+                    Taller Mecánico
+
+                </h2>
+
+                <p>
+
+                    Brindamos soluciones confiables para el mantenimiento y reparación
+                    de vehículos con calidad, compromiso y atención personalizada.
+
+                </p>
+
+            </div>
+
+            <div class="footer-links">
+
+                <h3>Enlaces rápidos</h3>
+
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#contacto">Contacto</a>
+
+            </div>
+
+            <div class="footer-redes">
+
+                <h3>Síguenos</h3>
+
+                <a href="#"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+
+                <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+
+                <a href="#"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+
+            </div>
+
+        </div>
+
+        <div class="footer-copy">
+
+            <p>
+
+                © 2026 Taller Mecánico. Todos los derechos reservados.
+
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="JS/index.js"></script>
+
+</body>
+
+</html>
