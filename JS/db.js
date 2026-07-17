@@ -1,7 +1,3 @@
-/**
- * db.js — TallerMecanicoDB
- */
-
 const DB_NOMBRE  = "TallerMecanicoDB";
 const DB_VERSION = 2; // ← subido de 1 a 2 para forzar onupgradeneeded
 

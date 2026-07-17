@@ -1,9 +1,11 @@
-/**
- * login.js — Lógica de autenticación
- * Taller Mecánico
- */
 
 let dbConexion = null;
+
+window.addEventListener("pageshow", (evento) => {
+  if (evento.persisted) {
+    window.location.reload();
+  }
+});
 
 document.addEventListener("DOMContentLoaded", async () => {
 
@@ -24,7 +26,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     console.error(error);
   }
 
-  document.querySelector(".tarjeta-login").classList.add("visible");
+  document.querySelector(".tarjeta-login")?.classList.add("visible");
 
   // ── Submit del formulario ───────────────────────────────────────────────────
   formulario.addEventListener("submit", async (evento) => {
@@ -106,7 +108,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       btnLogin.disabled = true;
 
       setTimeout(() => {
-        document.querySelector(".tarjeta-login").classList.add("exito-animacion");
+        document.querySelector(".tarjeta-login")?.classList.add("exito-animacion");
       }, 500);
 
       setTimeout(() => {
@@ -117,7 +119,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
           document
               .querySelector(".tarjeta-login")
-              .classList.remove("exito-animacion");
+              ?.classList.remove("exito-animacion");
 
           window.location.href = "index.html";
 

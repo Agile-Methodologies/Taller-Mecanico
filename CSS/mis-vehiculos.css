@@ -1,0 +1,152 @@
+.encabezado-flex {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.grid-vehiculos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 18px;
+}
+
+
+.tarjeta-vehiculo {
+  padding: 20px 20px 20px 32px;
+}
+
+.tarjeta-vehiculo-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+}
+
+.tarjeta-vehiculo-titulo h3 {
+  margin: 0 0 4px;
+  font-family: var(--fuente-display);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--azul);
+}
+
+.tarjeta-vehiculo-titulo span {
+  font-size: 0.78rem;
+  color: var(--texto-dim);
+}
+
+.tag-placa {
+  font-family: var(--fuente-display);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  font-size: 0.78rem;
+  background: rgba(0,48,73,0.08);
+  color: var(--azul);
+  border: 1px solid rgba(0,48,73,0.18);
+  padding: 4px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.tarjeta-vehiculo-datos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 14px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px dashed var(--borde);
+}
+
+.tarjeta-vehiculo-datos div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: var(--texto);
+}
+
+.tarjeta-vehiculo-datos span.label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--texto-dim);
+}
+
+.tarjeta-vehiculo-acciones {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+/* ── Modal ──────────────────────────────────────────────────── */
+
+.fondo-modal{
+    display:none;
+    position: fixed;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+  width: 100%;
+  max-width: 460px;
+  padding: 26px 28px 28px 40px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.modal-cabecera h2 {
+  font-family: var(--fuente-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin: 0;
+  color: var(--azul);
+}
+
+.modal-confirmar {
+  max-width: 400px;
+  text-align: left;
+}
+.modal-confirmar h2 {
+  font-family: var(--fuente-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--rojo-oscuro);
+}
+.modal-confirmar p {
+  color: var(--texto-dim);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.modal-confirmar strong { color: var(--texto); }
+
+.acciones-modal {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.mensaje-form {
+  font-size: 0.82rem;
+  color: var(--rojo-oscuro);
+  min-height: 18px;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .grid-vehiculos { grid-template-columns: 1fr; }
+  .modal { padding: 22px 18px 22px 30px; }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de Citas — Taller Mecánico</title>
+    <link rel="stylesheet" href="CSS/panel.css">
+    <link rel="stylesheet" href="CSS/historial.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<header class="header">
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <span>Taller Mecánico</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="index.html#inicio">Inicio</a></li>
+            <li><a href="index.html#servicios">Servicios</a></li>
+            <li><a href="index.html#nosotros">Nosotros</a></li>
+            <li><a href="index.html#reservar">Reservar cita</a></li>
+            <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+
+        <div class="login-container oculto">
+            <a href="login.html" class="btn-login">
+                <i class="fa-solid fa-user"></i>
+                Iniciar sesión
+            </a>
+        </div>
+
+        <div class="perfil-container">
+            <button class="perfil-btn">
+                <i class="fa-solid fa-circle-user"></i>
+                <span id="nombre-usuario">Usuario</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="dropdown">
+                <a href="perfil.html">
+                    <i class="fa-solid fa-user"></i>
+                    Mi perfil
+                </a>
+                <a href="mis-vehiculos.html">
+                    <i class="fa-solid fa-car"></i>
+                    Mis vehículos
+                </a>
+                <a href="historial.html">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    Historial de citas
+                </a>
+                <a href="#" id="cerrarSesion">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Cerrar sesión
+                </a>
+            </div>
+        </div>
+
+        <button class="menu-btn">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </nav>
+</header>
+
+<main class="contenido-panel">
+
+  <div class="encabezado-seccion encabezado-flex">
+    <div>
+      <span class="eyebrow">Bitácora</span>
+      <h1>Historial de Citas</h1>
+      <p>Trabajos realizados en tus vehículos a lo largo del tiempo.</p>
+    </div>
+
+    <div class="campo campo-filtro">
+      <label for="filtro-vehiculo">Filtrar por vehículo</label>
+      <select id="filtro-vehiculo">
+        <option value="todos">Todos los vehículos</option>
+      </select>
+    </div>
+  </div>
+
+  <div id="linea-historial" class="linea-historial"></div>
+
+  <div id="estado-vacio" class="estado-vacio" hidden>
+    <strong>Aún no hay historial</strong>
+    <span id="texto-vacio">Cuando se complete un servicio, aparecerá aquí.</span>
+  </div>
+
+</main>
+
+<script src="JS/db.js"></script>
+<script src="JS/auth.js"></script>
+<script src="JS/header-comun.js"></script>
+<script src="JS/historial.js"></script>
+</body>
+</html>
