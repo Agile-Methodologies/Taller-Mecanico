@@ -13,9 +13,10 @@ const perfilBtn = document.querySelector(".perfil-btn");
 const dropdown = document.querySelector(".dropdown");
 
 const nombreUsuario = document.getElementById("nombre-usuario");
-const cerrarSesion = document.getElementById("cerrarSesion");
+const enlaceCerrarSesion = document.getElementById("cerrarSesion");
 
 const btnReservar = document.querySelector(".btn-principal");
+
 // ==========================================
 // NAVBAR SCROLL
 // ==========================================
@@ -33,6 +34,7 @@ window.addEventListener("scroll", () => {
     }
 
 });
+
 // ==========================================
 // MENU RESPONSIVE
 // ==========================================
@@ -42,6 +44,7 @@ menuBtn.addEventListener("click", () => {
     navLinks.classList.toggle("active");
 
 });
+
 // ==========================================
 // VERIFICAR SESION
 // ==========================================
@@ -57,6 +60,7 @@ if (usuario) {
     nombreUsuario.textContent = usuario.nombre;
 
 }
+
 // ==========================================
 // DROPDOWN PERFIL
 // ==========================================
@@ -70,6 +74,7 @@ if (perfilBtn) {
     });
 
 }
+
 // ==========================================
 // CERRAR DROPDOWN
 // ==========================================
@@ -83,13 +88,14 @@ window.addEventListener("click", (e) => {
     }
 
 });
+
 // ==========================================
 // CERRAR SESION
 // ==========================================
 
-if (cerrarSesion) {
+if (enlaceCerrarSesion) {
 
-    cerrarSesion.addEventListener("click", (e) => {
+    enlaceCerrarSesion.addEventListener("click", (e) => {
 
         e.preventDefault();
 
@@ -100,6 +106,7 @@ if (cerrarSesion) {
     });
 
 }
+
 // ==========================================
 // RESERVAR CITA
 // ==========================================

@@ -547,6 +547,15 @@ Incluye:
 
 ---
 
+## Header-comun
+
+Este archivo se encarga de controlar el comportamiento del encabezado (header) y la navegación de todas las páginas del sistema. Su objetivo es que el mismo código funcione en:
+
+* index.html
+* perfil.html
+* mis-vehiculos.html
+* historial.html
+
 ## Administración (Opcional)
 
 Panel exclusivo para administradores.
@@ -693,10 +702,10 @@ Eliminar sesión
 | Footer                    | ✅ Finalizado                                   |
 | Responsive                | ✅ Finalizado                                   |
 | auth.js                   | ⏳ Pendiente                                    |
-| Perfil                    | ⏳ Pendiente                                    |
-| Mis Vehículos             | ⏳ Pendiente                                    |
+| Perfil                    | ✅ Finalizado                                   |
+| Mis Vehículos             | ✅ Finalizado                                   |
 | Reservar cita             | ⏳ Pendiente                                    |
-| Historial                 | ⏳ Pendiente                                    |
+| Historial                 | ✅ Finalizado                                   |
 | Panel administrador       | ⏳ Pendiente                                    |
 
 ---
@@ -706,8 +715,5 @@ Eliminar sesión
 1. Implementar `auth.js`.
 2. Integrar la autenticación con `login.js`.
 3. Adaptar `index.js` para mostrar el estado de sesión.
-4. Desarrollar la página **Perfil**.
-5. Implementar **Mis Vehículos**.
-6. Desarrollar el módulo **Reservar Cita**.
-7. Implementar **Historial de Citas**.
-8. (Opcional) Crear el panel de administración.
+4. Desarrollar el módulo **Reservar Cita**.
+5. (Opcional) Crear el panel de administración.

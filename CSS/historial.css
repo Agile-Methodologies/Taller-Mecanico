@@ -1,0 +1,108 @@
+.encabezado-flex {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.campo-filtro { margin-bottom: 0; min-width: 220px; }
+
+.linea-historial {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.entrada-historial {
+  padding: 20px 22px 20px 34px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 18px;
+  align-items: center;
+}
+
+.entrada-fecha {
+  text-align: center;
+  min-width: 58px;
+  border-right: 1px dashed var(--borde);
+  padding-right: 16px;
+}
+
+.entrada-fecha .dia {
+  font-family: var(--fuente-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1;
+  display: block;
+}
+
+.entrada-fecha .mes-anio {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--texto-dim);
+}
+
+.entrada-cuerpo h3 {
+  margin: 0 0 4px;
+  font-family: var(--fuente-display);
+  font-size: 1.02rem;
+}
+
+.entrada-cuerpo .vehiculo-info {
+  font-size: 0.8rem;
+  color: var(--texto-dim);
+  margin-bottom: 8px;
+}
+
+.entrada-cuerpo .resultado {
+  font-size: 0.86rem;
+  color: var(--texto);
+  line-height: 1.45;
+}
+
+.entrada-lado {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.badge-estado {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.badge-estado.completada { background: rgba(76,175,109,0.15); color: var(--exito); border: 1px solid rgba(76,175,109,0.35); }
+.badge-estado.pendiente  { background: rgba(255,176,32,0.15); color: var(--acento); border: 1px solid rgba(255,176,32,0.35); }
+.badge-estado.cancelada  { background: rgba(229,72,77,0.15); color: var(--peligro); border: 1px solid rgba(229,72,77,0.35); }
+.badge-estado.default    { background: rgba(255,255,255,0.06); color: var(--texto-dim); border: 1px solid var(--borde); }
+
+.tag-placa-mini {
+  font-family: var(--fuente-display);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--texto-dim);
+}
+
+@media (max-width: 640px) {
+  .entrada-historial {
+    grid-template-columns: auto 1fr;
+    padding: 18px 18px 18px 26px;
+  }
+  .entrada-lado {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--borde);
+  }
+}
