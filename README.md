@@ -687,8 +687,8 @@ Eliminar sesión
 
 # Estado actual del proyecto
 
-| Módulo                    | Estado                                         |
-| ------------------------- | ---------------------------------------------- |
+| Módulo                    | Estado                                          |
+| ------------------------- | ----------------------------------------------  |
 | Base de datos (IndexedDB) | ✅ Finalizado                                   |
 | CRUD base                 | ✅ Finalizado                                   |
 | Login                     | ✅ Finalizado (pendiente integración de sesión) |
@@ -701,10 +701,10 @@ Eliminar sesión
 | Contacto                  | ✅ Finalizado                                   |
 | Footer                    | ✅ Finalizado                                   |
 | Responsive                | ✅ Finalizado                                   |
-| auth.js                   | ⏳ Pendiente                                    |
+| auth.js                   | ✅ Finalizado                                   |
 | Perfil                    | ✅ Finalizado                                   |
 | Mis Vehículos             | ✅ Finalizado                                   |
-| Reservar cita             | ⏳ Pendiente                                    |
+| Reservar cita             | ✅ Finalizado                                   |
 | Historial                 | ✅ Finalizado                                   |
 | Panel administrador       | ⏳ Pendiente                                    |
 
