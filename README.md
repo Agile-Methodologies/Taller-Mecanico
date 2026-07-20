@@ -706,7 +706,7 @@ Eliminar sesión
 | Mis Vehículos             | ✅ Finalizado                                   |
 | Reservar cita             | ✅ Finalizado                                   |
 | Historial                 | ✅ Finalizado                                   |
-| Panel administrador       | ⏳ Pendiente                                    |
+| Panel administrador       | ✅ Finalizado                                   |
 
 ---
 
