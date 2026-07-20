@@ -3,6 +3,7 @@
 // ==========================================
 
 const header = document.querySelector(".header");
+
 const menuBtn = document.querySelector(".menu-btn");
 const navLinks = document.querySelector(".nav-links");
 
@@ -17,17 +18,18 @@ const enlaceCerrarSesion = document.getElementById("cerrarSesion");
 
 const btnReservar = document.querySelector(".btn-principal");
 
+
 // ==========================================
 // NAVBAR SCROLL
 // ==========================================
 
 window.addEventListener("scroll", () => {
 
-    if (window.scrollY > 60) {
+    if(window.scrollY > 60){
 
         header.classList.add("scroll");
 
-    } else {
+    }else{
 
         header.classList.remove("scroll");
 
@@ -35,15 +37,40 @@ window.addEventListener("scroll", () => {
 
 });
 
+
 // ==========================================
 // MENU RESPONSIVE
 // ==========================================
 
-menuBtn.addEventListener("click", () => {
+if(menuBtn && navLinks){
 
-    navLinks.classList.toggle("active");
+    menuBtn.addEventListener("click", () => {
+
+        navLinks.classList.toggle("active");
+
+    });
+
+}
+
+
+// ==========================================
+// CERRAR MENU AL SELECCIONAR OPCION
+// ==========================================
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        if(navLinks){
+
+            navLinks.classList.remove("active");
+
+        }
+
+    });
 
 });
+
 
 // ==========================================
 // VERIFICAR SESION
@@ -51,23 +78,41 @@ menuBtn.addEventListener("click", () => {
 
 const usuario = obtenerSesion();
 
-if (usuario) {
 
-    loginContainer.classList.add("oculto");
+if(usuario){
 
-    perfilContainer.classList.remove("oculto");
+    if(loginContainer){
 
-    nombreUsuario.textContent = usuario.nombre;
+        loginContainer.classList.add("oculto");
+
+    }
+
+
+    if(perfilContainer){
+
+        perfilContainer.classList.remove("oculto");
+
+    }
+
+
+    if(nombreUsuario){
+
+        nombreUsuario.textContent = usuario.nombre;
+
+    }
 
 }
+
 
 // ==========================================
 // DROPDOWN PERFIL
 // ==========================================
 
-if (perfilBtn) {
+if(perfilBtn && dropdown){
 
-    perfilBtn.addEventListener("click", () => {
+    perfilBtn.addEventListener("click", (e) => {
+
+        e.stopPropagation();
 
         dropdown.classList.toggle("mostrar");
 
@@ -75,68 +120,82 @@ if (perfilBtn) {
 
 }
 
+
 // ==========================================
-// CERRAR DROPDOWN
+// CERRAR DROPDOWN AL HACER CLICK FUERA
 // ==========================================
 
 window.addEventListener("click", (e) => {
 
-    if (!perfilContainer.contains(e.target)) {
 
-        dropdown.classList.remove("mostrar");
+    if(perfilContainer && dropdown){
+
+
+        if(!perfilContainer.contains(e.target)){
+
+
+            dropdown.classList.remove("mostrar");
+
+
+        }
+
 
     }
 
+
 });
+
 
 // ==========================================
 // CERRAR SESION
 // ==========================================
 
-if (enlaceCerrarSesion) {
+if(enlaceCerrarSesion){
 
     enlaceCerrarSesion.addEventListener("click", (e) => {
 
+
         e.preventDefault();
+
 
         cerrarSesion();
 
+
         window.location.href = "index.html";
+
 
     });
 
 }
 
+
 // ==========================================
 // RESERVAR CITA
 // ==========================================
 
-btnReservar.addEventListener("click", (e) => {
+if(btnReservar){
 
-    e.preventDefault();
+    btnReservar.addEventListener("click", (e) => {
 
-    if (usuario) {
 
-        window.location.href = "reservar-cita.html";
+        e.preventDefault();
 
-    } else {
 
-        window.location.href = "login.html";
+        if(usuario){
 
-    }
 
-    
-});
-// ==========================================
-// CERRAR MENU
-// ==========================================
+            window.location.href = "reservar-cita.html";
 
-document.querySelectorAll(".nav-links a").forEach(link => {
 
-    link.addEventListener("click", () => {
+        }else{
 
-        navLinks.classList.remove("active");
+
+            window.location.href = "login.html";
+
+
+        }
+
 
     });
 
-});
+}

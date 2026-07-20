@@ -874,19 +874,435 @@ ul{
     }
 
 }
-.oculto {
-    display: none;
+
+/*=========================================
+=           PERFIL USUARIO
+=========================================*/
+
+.oculto{
+
+    display:none !important;
+
 }
 
-.dropdown {
-    display: none;
+
+.perfil-container{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
 }
 
-.dropdown.mostrar {
-    display: flex;
-    flex-direction: column;
+
+.perfil-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:10px 18px;
+
+    border:none;
+
+    border-radius:40px;
+
+    background:rgba(255,255,255,.15);
+
+    color:white;
+
+    font-family:'Poppins',sans-serif;
+
+    font-size:.95rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.35s ease;
+
 }
 
-.nav-links.active {
-    display: flex;
+
+.header.scroll .perfil-btn{
+
+    background:white;
+
+    color:var(--azul);
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+}
+
+
+.perfil-btn:hover{
+
+    transform:translateY(-2px);
+
+}
+
+
+.perfil-btn .fa-circle-user{
+
+    color:var(--rojo);
+
+    font-size:1.3rem;
+
+}
+
+
+.dropdown{
+
+    position:absolute;
+
+    right:0;
+
+    top:calc(100% + 12px);
+
+    width:240px;
+
+    background:white;
+
+    border-radius:15px;
+
+    box-shadow:var(--sombra);
+
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(10px);
+
+    transition:.3s ease;
+
+    z-index:1000;
+
+}
+
+
+.dropdown.mostrar{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+
+}
+
+
+.dropdown a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:14px 20px;
+
+    color:var(--texto);
+
+    font-size:.95rem;
+
+    font-weight:500;
+
+    transition:.3s ease;
+
+}
+
+
+.dropdown a i{
+
+    color:var(--rojo);
+
+    width:20px;
+
+    text-align:center;
+
+}
+
+
+.dropdown a:hover{
+
+    background:var(--gris);
+
+    color:var(--rojo);
+
+}
+
+
+#cerrarSesion{
+
+    border-top:1px solid #eee;
+
+    color:var(--rojo);
+
+    font-weight:600;
+
+}
+
+
+/*=========================================
+=           MENU HAMBURGUESA
+=========================================*/
+
+.menu-btn{
+
+    display:none;
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    font-size:1.8rem;
+
+    cursor:pointer;
+
+}
+
+
+.header.scroll .menu-btn{
+
+    color:var(--azul);
+
+}
+
+
+/*=========================================
+=           RESPONSIVE NAVBAR
+=========================================*/
+
+@media(max-width:900px){
+
+    .navbar{
+
+        gap:18px;
+
+    }
+
+
+    .perfil-container{
+
+        margin-left:auto;
+
+    }
+
+
+    .perfil-btn{
+
+        padding:8px 14px;
+
+        gap:8px;
+
+    }
+
+
+    .menu-btn{
+
+        display:block;
+
+        margin-left:8px;
+
+        flex-shrink:0;
+
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .perfil-btn span{
+
+        max-width:80px;
+
+        overflow:hidden;
+
+        text-overflow:ellipsis;
+
+        white-space:nowrap;
+
+    }
+
+
+    .perfil-btn{
+
+        padding:8px 12px;
+
+    }
+
+
+    .menu-btn{
+
+        font-size:1.6rem;
+
+    }
+
+}
+
+/*=========================================
+=           BOTON PRINCIPAL CTA
+=========================================*/
+
+.btn-principal{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
+
+    padding:15px 35px;
+
+    background:white;
+
+    color:var(--rojo);
+
+    border-radius:50px;
+
+    font-size:1.05rem;
+
+    font-weight:700;
+
+    transition:.35s ease;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+
+}
+
+
+.btn-principal i{
+
+    font-size:1.2rem;
+
+}
+
+
+.btn-principal:hover{
+
+    background:var(--azul);
+
+    color:white;
+
+    transform:translateY(-5px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.25);
+}
+
+/*=========================================
+=           AJUSTE PERFIL HEADER
+=========================================*/
+
+.perfil-container {
+
+    flex-shrink:0;
+
+}
+
+
+.login-container {
+
+    flex-shrink:0;
+
+}
+
+
+/* Separación cuando todavía existe navbar completo */
+
+@media (max-width:1100px) and (min-width:901px){
+
+    .nav-links{
+
+        gap:22px;
+
+    }
+
+
+    .perfil-container{
+
+        margin-left:20px;
+
+    }
+
+
+    .login-container{
+
+        margin-left:20px;
+
+    }
+
+}
+
+
+/*=========================================
+=           HEADER TABLET
+=========================================*/
+
+@media(max-width:900px){
+
+    .navbar{
+
+        gap:18px;
+
+    }
+
+
+    .perfil-container{
+
+        margin-left:auto;
+
+    }
+
+
+    .menu-btn{
+
+        margin-left:15px;
+
+        flex-shrink:0;
+
+    }
+
+}
+
+
+/*=========================================
+=           HEADER MOVIL
+=========================================*/
+
+@media(max-width:600px){
+
+    .perfil-btn span{
+
+        max-width:80px;
+
+        overflow:hidden;
+
+        text-overflow:ellipsis;
+
+        white-space:nowrap;
+
+    }
+
+
+    .perfil-btn{
+
+        padding:8px 12px;
+
+    }
+
 }

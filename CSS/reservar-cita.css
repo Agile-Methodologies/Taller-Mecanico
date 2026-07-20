@@ -288,6 +288,12 @@
   margin: 0 0 6px;
 }
 
+.pantalla-exito .acciones-modal{
+
+    margin-top:30px;
+
+}
+
 @media (max-width: 640px) {
   .panel-paso { padding: 22px 18px 22px 28px; }
   .resumen-reserva { grid-template-columns: 1fr; }

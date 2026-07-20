@@ -1,0 +1,201 @@
+/* ══════════════════════════════════════════════════════════════
+   admin.css — Estilos del panel de administración
+   Extiende panel.css (variables, header, .ficha, .btn, .campo, etc.)
+   ══════════════════════════════════════════════════════════════ */
+
+.contenido-panel-ancho {
+  max-width: 1180px;
+}
+
+.activo-admin {
+  color: var(--blanco) !important;
+  background: rgba(193,18,31,0.35) !important;
+}
+
+.encabezado-flex {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.resumen-admin {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.tarjeta-resumen {
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  padding: 12px 18px;
+  min-width: 92px;
+  text-align: center;
+  box-shadow: var(--sombra);
+}
+
+.tarjeta-resumen .numero {
+  display: block;
+  font-family: var(--fuente-display);
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--azul);
+  line-height: 1.1;
+}
+
+.tarjeta-resumen .etiqueta {
+  display: block;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--texto-dim);
+  margin-top: 4px;
+}
+
+.filtros-admin {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  align-items: flex-end;
+}
+
+.campo-filtro {
+  margin-bottom: 0;
+  min-width: 180px;
+}
+
+.campo-buscar {
+  flex: 1;
+  min-width: 220px;
+}
+
+.lista-citas-admin {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.admin-cita {
+  padding: 20px 24px 20px 34px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.admin-cita-cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.admin-cita-fecha {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--fuente-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--azul);
+}
+.admin-cita-fecha i { color: var(--rojo); }
+
+.admin-cita-cuerpo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 14px;
+  border-bottom: 1px dashed var(--borde);
+}
+
+.admin-cita-cliente {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.admin-cita-cliente i {
+  margin-top: 3px;
+  color: var(--texto-dim);
+  width: 16px;
+  text-align: center;
+}
+.admin-cita-cliente strong {
+  display: block;
+  color: var(--texto);
+  font-size: 0.98rem;
+}
+.admin-cita-subtexto {
+  display: block;
+  font-size: 0.82rem;
+  color: var(--texto-dim);
+  margin-top: 2px;
+}
+
+.admin-cita-detalle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  font-size: 0.88rem;
+  color: var(--texto);
+}
+.admin-cita-detalle i {
+  color: var(--texto-dim);
+  width: 14px;
+  text-align: center;
+  margin-right: 4px;
+}
+
+.admin-cita-notas {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0;
+  padding: 10px 12px;
+  background: var(--gris);
+  border-radius: 10px;
+  font-size: 0.86rem;
+  color: var(--texto);
+  line-height: 1.45;
+}
+.admin-cita-notas i {
+  margin-top: 2px;
+  color: var(--rojo);
+}
+
+.admin-cita-acciones {
+  display: grid;
+  grid-template-columns: 180px 1fr auto;
+  gap: 14px;
+  align-items: end;
+}
+
+.campo-estado-admin,
+.campo-review {
+  margin-bottom: 0;
+}
+
+.btn-guardar-cita {
+  height: 42px;
+  white-space: nowrap;
+}
+
+@media (max-width: 780px) {
+  .admin-cita-acciones {
+    grid-template-columns: 1fr;
+  }
+  .admin-cita {
+    padding: 18px 18px 18px 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .encabezado-flex { align-items: flex-start; }
+  .resumen-admin { width: 100%; }
+  .tarjeta-resumen { flex: 1; min-width: 76px; padding: 10px; }
+  .filtros-admin { flex-direction: column; align-items: stretch; }
+  .campo-filtro { min-width: 0; }
+}

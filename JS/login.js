@@ -121,7 +121,10 @@ document.addEventListener("DOMContentLoaded", async () => {
               .querySelector(".tarjeta-login")
               ?.classList.remove("exito-animacion");
 
-          window.location.href = "index.html";
+          // ── Redirección según el rol ────────────────────────────────
+          window.location.href = usuario.rol === "admin"
+            ? "admin-citas.html"
+            : "index.html";
 
       }, 2500);
 

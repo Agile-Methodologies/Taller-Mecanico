@@ -146,6 +146,46 @@
   margin: 0;
 }
 
+/*=========================================
+=       AJUSTE NAVBAR TABLET
+=========================================*/
+
+@media (max-width:1100px) and (min-width:901px){
+
+    .nav-links{
+
+        gap:20px;
+
+    }
+
+
+    .nav-links a{
+
+        font-size:.9rem;
+
+    }
+
+
+    .perfil-btn{
+
+        padding:8px 12px;
+
+    }
+
+}
+
+/*=========================================
+=       EVITAR SALTO DE LINKS NAVBAR
+=========================================*/
+
+.nav-links{
+
+    flex-wrap:nowrap;
+
+    white-space:nowrap;
+
+}
+
 @media (max-width: 640px) {
   .grid-vehiculos { grid-template-columns: 1fr; }
   .modal { padding: 22px 18px 22px 30px; }

@@ -8,6 +8,15 @@
       "password": "hash123",
       "rol": "cliente",
       "createdAt": "2026-06-01T10:00:00Z"
+    },
+    {
+      "id": "u-admin",
+      "nombre": "Administrador",
+      "email": "admin@taller.com",
+      "telefono": "0000-0000",
+      "password": "123456",
+      "rol": "admin",
+      "createdAt": "2026-01-01T00:00:00Z"
     }
   ],
 
@@ -50,6 +59,24 @@
       "fecha": "2026-06-10T09:00:00Z",
       "estado": "completada",
       "notas": "Cliente pidió aceite sintético"
+    },
+    {
+      "id": "c-002",
+      "usuarioId": "u-001",
+      "vehiculoId": "v-001",
+      "servicioId": "s-002",
+      "fecha": "2026-07-22T11:00:00Z",
+      "estado": "pendiente",
+      "notas": "El carro hace un chillido al frenar"
+    },
+    {
+      "id": "c-003",
+      "usuarioId": "u-001",
+      "vehiculoId": "v-001",
+      "servicioId": "s-001",
+      "fecha": "2026-07-25T14:00:00Z",
+      "estado": "confirmada",
+      "notas": ""
     }
   ],
 

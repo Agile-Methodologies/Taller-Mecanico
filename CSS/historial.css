@@ -103,6 +103,46 @@
   color: var(--texto-dim);
 }
 
+/*=========================================
+=       AJUSTE NAVBAR TABLET
+=========================================*/
+
+@media (max-width:1100px) and (min-width:901px){
+
+    .nav-links{
+
+        gap:20px;
+
+    }
+
+
+    .nav-links a{
+
+        font-size:.9rem;
+
+    }
+
+
+    .perfil-btn{
+
+        padding:8px 12px;
+
+    }
+
+}
+
+/*=========================================
+=       EVITAR SALTO DE LINKS NAVBAR
+=========================================*/
+
+.nav-links{
+
+    flex-wrap:nowrap;
+
+    white-space:nowrap;
+
+}
+
 @media (max-width: 640px) {
   .entrada-historial {
     grid-template-columns: auto 1fr;
