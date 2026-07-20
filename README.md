@@ -562,10 +562,9 @@ Panel exclusivo para administradores.
 
 Podrá gestionar:
 
-* Usuarios
-* Servicios
 * Citas
-* Historial
+* Diágnosticos
+* Ver el historial de las citas
 
 ---
 
