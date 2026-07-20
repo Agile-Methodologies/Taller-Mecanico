@@ -1,0 +1,296 @@
+.contenido-reserva { max-width: 760px; }
+
+/* ── Indicador de pasos ─────────────────────────────────────── */
+
+.pasos {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0 0 28px;
+  padding: 0;
+}
+
+.paso {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  position: relative;
+}
+
+.paso:not(:last-child)::after {
+  content: "";
+  flex: 1;
+  height: 2px;
+  background: var(--borde);
+  margin: 0 10px;
+}
+
+.paso.completado:not(:last-child)::after { background: var(--acento); }
+
+.paso-numero {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--fuente-display);
+  font-weight: 600;
+  font-size: 0.85rem;
+  background: var(--tarjeta);
+  border: 2px solid var(--borde);
+  color: var(--texto-dim);
+  transition: border-color var(--transicion), background var(--transicion), color var(--transicion);
+}
+
+.paso.activo .paso-numero {
+  border-color: var(--acento);
+  color: var(--acento);
+}
+
+.paso.completado .paso-numero {
+  background: var(--acento);
+  border-color: var(--acento);
+  color: var(--blanco);
+}
+
+.paso-nombre {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--texto-dim);
+  white-space: nowrap;
+  display: none;
+}
+
+.paso.activo .paso-nombre { color: var(--azul); font-weight: 600; }
+
+@media (min-width: 560px) {
+  .paso-nombre { display: inline; }
+}
+
+/* ── Paneles de cada paso ───────────────────────────────────── */
+
+.panel-paso {
+  display: none;
+  padding: 26px 26px 26px 38px;
+  margin-bottom: 20px;
+}
+
+.panel-paso.activo { display: block; }
+
+.panel-titulo {
+  font-family: var(--fuente-display);
+  font-size: 1.1rem;
+  color: var(--azul);
+  margin: 0 0 18px;
+}
+
+/* ── Grillas de selección (vehículo / servicio) ────────────── */
+
+.grid-seleccion {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.tarjeta-seleccionable {
+  text-align: left;
+  cursor: pointer;
+  background: var(--gris);
+  border: 2px solid var(--borde);
+  border-radius: 12px;
+  padding: 16px 18px;
+  font-family: var(--fuente-cuerpo);
+  transition: border-color var(--transicion), background var(--transicion);
+}
+
+.tarjeta-seleccionable:hover { border-color: var(--azul-claro); }
+
+.tarjeta-seleccionable.seleccionada {
+  border-color: var(--acento);
+  background: rgba(193,18,31,0.06);
+}
+
+.tarjeta-seleccionable-cabecera {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.tarjeta-seleccionable h3 {
+  margin: 0;
+  font-family: var(--fuente-display);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--azul);
+}
+
+.tarjeta-seleccionable .check {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--borde);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  color: transparent;
+  transition: border-color var(--transicion), background var(--transicion), color var(--transicion);
+}
+
+.tarjeta-seleccionable.seleccionada .check {
+  border-color: var(--acento);
+  background: var(--acento);
+  color: var(--blanco);
+}
+
+.tarjeta-seleccionable p {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--texto-dim);
+}
+
+.tarjeta-seleccionable .meta {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  font-size: 0.76rem;
+  color: var(--texto-dim);
+}
+
+.tarjeta-seleccionable .meta span { display: flex; align-items: center; gap: 5px; }
+.tarjeta-seleccionable .meta i { color: var(--acento); }
+
+/* ── Paso fecha / hora ──────────────────────────────────────── */
+
+.campo-fecha { max-width: 260px; }
+
+.ayuda-campo {
+  font-size: 0.78rem;
+  color: var(--texto-dim);
+  margin: 6px 0 0;
+}
+
+.contenedor-horarios { margin-top: 22px; }
+
+.label-horarios {
+  display: block;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--texto-dim);
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.grid-horarios {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 10px;
+}
+
+.btn-horario {
+  padding: 10px 8px;
+  border-radius: 10px;
+  border: 1px solid var(--borde);
+  background: var(--gris);
+  color: var(--texto);
+  font-family: var(--fuente-cuerpo);
+  font-size: 0.86rem;
+  cursor: pointer;
+  transition: border-color var(--transicion), background var(--transicion), color var(--transicion);
+}
+
+.btn-horario:hover:not(:disabled) { border-color: var(--azul-claro); }
+
+.btn-horario.seleccionado {
+  background: var(--acento);
+  border-color: var(--acento);
+  color: var(--blanco);
+  font-weight: 600;
+}
+
+.btn-horario:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+/* ── Resumen de confirmación ────────────────────────────────── */
+
+.resumen-reserva {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 18px;
+  padding: 18px 20px;
+  background: var(--gris);
+  border: 1px dashed var(--borde);
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.resumen-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.resumen-item .label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--texto-dim);
+}
+
+.resumen-item .valor {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--azul);
+}
+
+/* ── Navegación del wizard ──────────────────────────────────── */
+
+.acciones-wizard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.acciones-wizard .btn-primario:last-child { margin-left: auto; }
+
+/* ── Pantalla de éxito ───────────────────────────────────────── */
+
+.pantalla-exito {
+  text-align: center;
+  padding: 50px 30px;
+}
+
+.pantalla-exito i {
+  font-size: 3rem;
+  color: var(--exito);
+  margin-bottom: 14px;
+}
+
+.pantalla-exito h2 {
+  font-family: var(--fuente-display);
+  color: var(--azul);
+  margin: 0 0 8px;
+}
+
+.pantalla-exito p {
+  color: var(--texto-dim);
+  margin: 0 0 6px;
+}
+
+@media (max-width: 640px) {
+  .panel-paso { padding: 22px 18px 22px 28px; }
+  .resumen-reserva { grid-template-columns: 1fr; }
+  .paso-nombre { font-size: 0.74rem; }
+  .acciones-wizard { flex-wrap: wrap; }
+}

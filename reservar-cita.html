@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservar cita — Taller Mecánico</title>
+    <link rel="stylesheet" href="CSS/panel.css">
+    <link rel="stylesheet" href="CSS/reservar-cita.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<header class="header">
+    <nav class="navbar">
+        <a href="index.html" class="logo">
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <span>Taller Mecánico</span>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="index.html#inicio">Inicio</a></li>
+            <li><a href="index.html#servicios">Servicios</a></li>
+            <li><a href="index.html#nosotros">Nosotros</a></li>
+            <li><a href="index.html#reservar">Reservar cita</a></li>
+            <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+
+        <div class="login-container oculto">
+            <a href="login.html" class="btn-login">
+                <i class="fa-solid fa-user"></i>
+                Iniciar sesión
+            </a>
+        </div>
+
+        <div class="perfil-container">
+            <button class="perfil-btn">
+                <i class="fa-solid fa-circle-user"></i>
+                <span id="nombre-usuario">Usuario</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="dropdown">
+                <a href="perfil.html">
+                    <i class="fa-solid fa-user"></i>
+                    Mi perfil
+                </a>
+                <a href="mis-vehiculos.html">
+                    <i class="fa-solid fa-car"></i>
+                    Mis vehículos
+                </a>
+                <a href="historial.html">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    Historial de citas
+                </a>
+                <a href="#" id="cerrarSesion">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Cerrar sesión
+                </a>
+            </div>
+        </div>
+
+        <button class="menu-btn">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </nav>
+</header>
+
+<main class="contenido-panel contenido-reserva">
+
+    <div class="encabezado-seccion">
+        <span class="eyebrow">Agenda</span>
+        <h1>Reservar cita</h1>
+        <p>Elige tu vehículo, el servicio y el horario que prefieras.</p>
+    </div>
+
+    <!-- ── Indicador de pasos ─────────────────────────────────────── -->
+    <ol class="pasos" id="pasos">
+        <li class="paso activo" data-paso="1">
+            <span class="paso-numero">1</span>
+            <span class="paso-nombre">Vehículo</span>
+        </li>
+        <li class="paso" data-paso="2">
+            <span class="paso-numero">2</span>
+            <span class="paso-nombre">Servicio</span>
+        </li>
+        <li class="paso" data-paso="3">
+            <span class="paso-numero">3</span>
+            <span class="paso-nombre">Fecha y hora</span>
+        </li>
+        <li class="paso" data-paso="4">
+            <span class="paso-numero">4</span>
+            <span class="paso-nombre">Confirmar</span>
+        </li>
+    </ol>
+
+    <!-- ── Estado vacío: sin vehículos ───────────────────────────── -->
+    <div id="estado-sin-vehiculos" class="estado-vacio" hidden>
+        <strong>Todavía no tienes vehículos registrados</strong>
+        Necesitas agregar al menos un vehículo antes de reservar una cita.
+        <div style="margin-top:16px;">
+            <a href="mis-vehiculos.html" class="btn btn-primario">
+                <i class="fa-solid fa-plus"></i> Agregar vehículo
+            </a>
+        </div>
+    </div>
+
+    <!-- ── Contenedor del formulario por pasos ───────────────────── -->
+    <form id="formulario-reserva" hidden>
+
+        <!-- PASO 1: Vehículo -->
+        <section class="panel-paso ficha activo" data-panel="1">
+            <h2 class="panel-titulo">Selecciona tu vehículo</h2>
+            <div id="grid-vehiculos" class="grid-seleccion grid-vehiculos-reserva"></div>
+        </section>
+
+        <!-- PASO 2: Servicio -->
+        <section class="panel-paso ficha" data-panel="2">
+            <h2 class="panel-titulo">Selecciona el servicio</h2>
+            <div id="grid-servicios" class="grid-seleccion grid-servicios-reserva"></div>
+        </section>
+
+        <!-- PASO 3: Fecha y hora -->
+        <section class="panel-paso ficha" data-panel="3">
+            <h2 class="panel-titulo">Elige fecha y hora</h2>
+
+            <div class="campo campo-fecha">
+                <label for="campo-fecha">Fecha</label>
+                <input type="date" id="campo-fecha" required>
+                <p class="ayuda-campo">Atendemos de lunes a viernes, 8:00 a.m. – 6:00 p.m.</p>
+            </div>
+
+            <div id="contenedor-horarios" class="contenedor-horarios" hidden>
+                <label class="label-horarios">Horarios disponibles</label>
+                <div id="grid-horarios" class="grid-horarios"></div>
+                <p id="mensaje-horarios" class="ayuda-campo"></p>
+            </div>
+        </section>
+
+        <!-- PASO 4: Confirmar -->
+        <section class="panel-paso ficha" data-panel="4">
+            <h2 class="panel-titulo">Confirma tu cita</h2>
+
+            <div class="resumen-reserva" id="resumen-reserva"></div>
+
+            <div class="campo">
+                <label for="campo-notas">Notas para el taller (opcional)</label>
+                <textarea id="campo-notas" rows="3" placeholder="Ej. ruido al frenar, aceite sintético, etc."></textarea>
+            </div>
+
+            <p class="mensaje-form" id="mensaje-form"></p>
+        </section>
+
+        <!-- ── Navegación entre pasos ────────────────────────────── -->
+        <div class="acciones-wizard">
+            <button type="button" class="btn btn-fantasma" id="btn-atras" hidden>
+                <i class="fa-solid fa-arrow-left"></i> Atrás
+            </button>
+            <button type="button" class="btn btn-primario" id="btn-siguiente">
+                Siguiente <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            <button type="submit" class="btn btn-primario" id="btn-confirmar" hidden>
+                <i class="fa-solid fa-check"></i> Confirmar cita
+            </button>
+        </div>
+    </form>
+
+    <!-- ── Pantalla de éxito ──────────────────────────────────────── -->
+    <div id="pantalla-exito" class="ficha pantalla-exito" hidden>
+        <i class="fa-solid fa-circle-check"></i>
+        <h2>¡Cita reservada!</h2>
+        <p id="texto-exito">Te esperamos en el taller.</p>
+        <div class="acciones-modal" style="justify-content:center;">
+            <a href="perfil.html" class="btn btn-fantasma">Ir a mi perfil</a>
+            <a href="reservar-cita.html" class="btn btn-primario">Reservar otra cita</a>
+        </div>
+    </div>
+
+</main>
+
+<div class="mensaje-flotante" id="mensaje"></div>
+
+<script src="JS/db.js"></script>
+<script src="JS/auth.js"></script>
+<script src="JS/header-comun.js"></script>
+<script src="JS/reservar-cita.js"></script>
+</body>
+</html>
